@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>GST Home Page</title>
+	<link rel="stylesheet"
+		href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+		crossorigin="anonymous">
+</head>
+
+<body background="/images/GST1.png" style="text-align: center">
+	<div class="fluid-container">
+		<div class="row" style="background-color:gray;text-align: center;">
+			<div class="hedline" style="margin-left: 0.5cm">
+				<img alt="" src="/images/GST8.png">
+			</div>
+		</div>
+
+
+		<div class="row"
+			style="background-color: rgb(231, 170, 135); margin-top: 1px">
+			<ul class="nav nav-pills" hrefActive="active">
+				<li class="nav-item"><a class="nav-link" style="color: black"
+					href="/home">Home</a></li>
+				<!-- <li class="nav-item"><a class="nav-link" style="color: black"
+							href="ab_out">About</a></li> -->
+			</ul>
+		</div>
+
+		<div class="row" style="margin-top: 1cm;">
+		<div class="body" style="margin-left: 70%">
+			<span style="color: #000080;"> 
+				<button><a th:href="@{/types}" style="text-decoration:none;font-weight: 900;font-size: 1.5rem">Client</a></button>
+				&nbsp
+				&nbsp
+				<button><a th:href="@{/admin}" style="text-decoration:none; font-weight: 900;font-size: 1.5rem">Administrator</a></button>
+			</span>
+		</div>
+		</div>
+		
+		<div class="row">
+			
+		</div>
+	
+	</div>
+</body>
+</html>

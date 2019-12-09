@@ -1,0 +1,151 @@
+<!-- <!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<table>
+		<tr>
+			<th>Category ID</th>
+			<th>Category</th>
+			<th>CGST</th>
+			<th>SGST</th>
+		</tr>
+		<tr th:each="category : ${categories}">
+			<td th:text="${category.id}"></td>
+			<td th:text="${category.type}"></td>
+			<td th:text="${category.gst.cgstRate}"></td>
+			<td th:text="${category.gst.sgstRate}"></td>
+		</tr>
+	</table>
+
+	<select onselect="/products/1" th:field="${categories}">
+		<option th:each="category : ${categories}" th:value="${category.type}"
+			th:text="${category.type}"></option>
+	</select>
+	<a href="/products/1">ProductList</a>
+
+
+</body> -->
+
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>GST Calculator</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+</head>
+
+<body background="/images/GST4.jpg">
+	<div class="fluid-container">
+		<div class="row" style="background-color: gray; text-align: center;">
+			<div class="hedline" style="margin-left: 0.5cm">
+				<img alt="" src="/images/GST8.png">
+			</div>
+		</div>
+
+
+		<div class="row"
+			style="background-color: rgb(231, 170, 135); margin-top: 1px">
+			<ul class="nav nav-pills" hrefActive="active">
+				<li class="nav-item"><a class="nav-link" style="color: black"
+					href="/home">Home</a></li>
+				<!-- <li class="nav-item"><a class="nav-link" style="color: black"
+							href="ab_out">About</a></li> -->
+			</ul>
+		</div>
+
+		<div class="row" style="margin-top: 1cm; margin-left: 30%">
+			<div class="body"
+				style="margin-left: 1cm; font-size: 1.1rem; font-weight: 1000">
+				<h1 style="font-size: 3rem; color: purple; font-weight: 900;">
+					GST Calculator</h1>
+				<form name="myform" id="myForm">
+					Select Product Type : <select id="country" th:field="${categories}" required="required">
+						<option value="None">-- Select --</option>
+						<option th:each="category : ${categories}"
+							th:value="${category.type}" th:text="${category.type}">
+						</option>
+						
+					</select> <br> <br> 
+					Enter Product Name : <input type="text" placeholder="product name"> <br>
+					<br> 
+					Enter Price of Product: <input type="number" name="price" placeholder="Enter Price" required="required"> 
+					<br> <br>
+					
+					
+					<script>
+
+					function GetSelectedValue(){
+						var e = document.getElementById("country");
+						var result = e.options[e.selectedIndex].value;
+				
+						document.getElementById("result").innerHTML = result;
+					}
+
+					function GetSelectedText(){
+						var e = document.getElementById("country");
+						var result = e.options[e.selectedIndex].text;
+				
+						document.getElementById("result").innerHTML = result;
+					}
+			
+					</script>
+					<button type="button" onclick="GetSelectedValue()">Get Selected Value</button>
+
+					<button type="button" onclick="GetSelectedText()">Get Selected Text</button>
+					
+					<p id="result">United State</p>
+					<p id="result">United State</p>
+					CGST :<input type="number" name="CGST" placeholder="%" value=""required="required"> 
+					SGST :<input type="number" name="SGST" placeholder="%" value="" required="required">
+					<br><br>
+					<input type="submit" name="Calculate" value="Calculate"	style="font-size: 1.5rem"> 
+					<input type="reset" value="Reset" style="font-size: 1.5rem" />
+				</form>
+
+			</div>
+		</div>
+
+		<div class="row"></div>
+
+	</div>
+</body>
+</html>
+
+
+
+
+
+<!-- <body style="text-align: center;font-size: large;font-weight: 900" background="/images/GST4.jpg">
+	<h1 style="font-size: 3rem; color: #7E9233">
+		<strong><span> GST Calculator </span></strong>
+	</h1>
+	<form name="myform" id="myForm">
+		Select Product Type : 
+		<select th:field="${categories}">
+			<option th:each="category : ${categories}" th:value="${category.type}" th:text="${category.type}">
+			
+			</option>	
+			<p id="demo"></p>					
+		</select> 
+		<br><br> 
+			Enter Product Name : 
+			<input type="text" placeholder="product name">
+		 	<br> <br> 
+		 	Enter Price of Product: <input type="number" name="price" placeholder="Enter Price">
+		 	<br><br>
+				CGST :<input type="number" name="CGST" placeholder="%" value="">
+				SGST :<input type="number" name="SGST" placeholder="%" value=""> 
+			<br> <br> 
+			<input type="submit" name="Calculate" value="Calculate" style="font-size: 1.5rem">
+	</form>
+	
+</body> -->
+

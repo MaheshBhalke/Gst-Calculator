@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="#" th:action="@{/test}" th:object="${productTypeWS}"
+		method="post">
+		<p>
+			Enter Type of product :<input type="text"
+				th:field="${productTypeWS.type}">
+		</p>
+		<p>
+			Enter product Cgst:<input type="text"
+				th:field="${productTypeWS.gst.cgstRate}">
+		</p>
+		<p>
+			Enter product Sgst :<input type="text"
+				th:field="${productTypeWS.gst.sgstRate}">
+		</p>
+		<p>
+			<input type="submit" value="Submit" /> <input type="reset"
+				value="Reset" />
+		</p>
+	</form>
+</body>
+</html>

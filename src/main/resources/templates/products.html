@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>GST Home Page</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+</head>
+
+<body background="/images/GST7.jpg" style="text-align: center">
+	<div class="fluid-container">
+		<div class="row" style="background-color: gray; text-align: center;">
+			<div class="hedline" style="margin-left: 0.5cm">
+				<img alt="" src="/images/GST8.png">
+			</div>
+		</div>
+
+
+		<div class="row"
+			style="background-color: rgb(231, 170, 135); margin-top: 1px">
+			<ul class="nav nav-pills" hrefActive="active">
+				<li class="nav-item"><a class="nav-link" style="color: black"
+					href="/home">Home</a></li>
+				<!-- <li class="nav-item"><a class="nav-link" style="color: black"
+							href="ab_out">About</a></li> -->
+			</ul>
+		</div>
+
+		<div class="row" style="margin-top: 1cm;">
+			<div class="body" style="margin-left: 35%; font-size: 1rem ;font-weight: 900">
+				<h1 style="font-weight: 900">Added Product category</h1>
+				<p th:text="'Type: ' + ${productType.type}" />
+				<p th:text="'CGST: ' + ${productType.gst.cgstRate}" />
+				<p th:text="'SGST: ' + ${productType.gst.sgstRate}" />
+				<br>
+				<button>
+					<a href="/admin" style="text-decoration: none">Add more product
+						categories </a>
+				</button>
+
+			</div>
+		</div>
+
+		<div class="row"></div>
+
+	</div>
+</body>
+</html>
+
+
+
+<!-- <!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Getting Started: Handling Form Submission</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body style="text-align: center;">
+	<div class="row">
+		<h1>Result</h1>
+		<p th:text="'Type: ' + ${productType.type}" />
+		<p th:text="'CGST: ' + ${productType.gst.cgstRate}" />
+		<p th:text="'SGST: ' + ${productType.gst.sgstRate}" />
+		<br>
+		<button>
+			<a href="/admin" style="text-decoration: none">Add more product
+				categories </a>
+		</button>
+	</div>
+</body>
+</html> -->
