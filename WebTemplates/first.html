@@ -3,11 +3,13 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<title>GST Administrator</title>
+<title>First Page</title>
 
+<link href="../static/css/dh_main.css" th:href="@{/css/dh_main.css}"
+	rel="stylesheet" media="screen" />
+<script type="text/javascript" th:src="@{/scripts/dh_main.js}"></script>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet"
@@ -20,161 +22,10 @@
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
 	crossorigin="anonymous">
-<style>
-body {
-	font-family: "Lato", sans-serif;
-}
-
-.sidebar {
-	height: 100%;
-	width: 0;
-	position: fixed;
-	z-index: 1;
-	top: 0;
-	left: 0;
-	background-color: #3385ff;
-	overflow-x: hidden;
-	transition: 0.5s;
-	padding-top: 60px;
-}
-
-.sidebar a {
-	padding: 8px 8px 8px 32px;
-	text-decoration: none;
-	font-size: 25px;
-	color: #ffffff;
-	display: block;
-	transition: 0.3s;
-}
-
-.sidebar a:hover {
-	color: #f1f1f1;
-}
-
-.sidebar .closebtn {
-	position: absolute;
-	top: 0;
-	right: 25px;
-	font-size: 36px;
-	margin-left: 50px;
-}
-
-.openbtn {
-	font-size: 20px;
-	cursor: pointer;
-	background-color: #111;
-	color: white;
-	padding: 10px 15px;
-	border: none;
-}
-a:active {
-  background-color:#5bdb99 ;
-}
-
-.openbtn:hover {
-	background-color: #444;
-}
-
-#main {
-	transition: margin-left .5s;
-	padding: 25px;
-}
-
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
-	.sidebar {
-		padding-top: 15px;
-	}
-	.sidebar a {
-		font-size: 18px;
-	}
-}
-</style>
-<script>
-	function openNav() {
-		document.getElementById("mySidebar").style.width = "250px";
-		document.getElementById("main").style.marginLeft = "0px";
-		document.getElementById("mySidebar").style.marginTop = "80px";
-		document.getElementById("body").style.marginLeft = "270px";
-	}
-
-	function closeNav() {
-		document.getElementById("mySidebar").style.width = "0";
-		document.getElementById("main").style.marginLeft = "0";
-		document.getElementById("body").style.marginLeft = "30px";
-	}
-</script>
-<!-- <script>
-$(document).ready(function(){
-  $("#request").click(function(){
-    $.get("http://localhost:8080/api/typeadded", function(data, status){
-      alert("Data: " + data + "\nStatus: " + status);
-    });
-  });
-});
-</script> -->
-<!-- <script>  
-    function goToURL() {  
-      location.href = 'http://localhost:8080/api/typeadded';  
-    }  
-  </script> 
- -->
-<!-- <script type="text/javascript">
-  $.ajax({
-  url: "http://localhost:8080/api/typeadded",
-  headers: {
-    "Authorization" : "Bearer NN_6xxxxx"
-  }
-}).done(function(data) {
-  $('#body').append(JSON.stringify(data))
-});
-  </script> -->
-<script>
-	$(document).ready(function() {
-		$("#defaultOpen").click(function() {
-			$.ajax({
-				url : "http://localhost:8080/api/typeadded",
-				success : function(data) {
-					$("#London").empty().append(JSON.stringify(data))
-				}
-			});
-		});
-
-		$("#defaultOpen1").click(function() {
-			$.ajax({
-				url : "http://localhost:8080/api/gst/3/12000",
-				success : function(data) {
-					$("#Paris").empty().append(JSON.stringify(data))
-				}
-			});
-		});
-	});
-</script>
-<script>
-	function openCity(evt, cityName) {
-		var i, tabcontent, tablinks;
-		tabcontent = document.getElementsByClassName("tabcontent");
-		for (i = 0; i < tabcontent.length; i++) {
-			tabcontent[i].style.display = "none";
-		}
-		tablinks = document.getElementsByClassName("tablinks");
-		for (i = 0; i < tablinks.length; i++) {
-			tablinks[i].className = tablinks[i].className
-					.replace(" active", "");
-		}
-		document.getElementById(cityName).style.display = "block";
-		evt.currentTarget.className += " active";
-	}
-
-	// Get the element with id="defaultOpen" and click on it
-	document.getElementById("defaultOpen").click();
-	document.getElementById("defaultOpen1").click();
-	document.getElementById("defaultOpen2").click();
-</script>
 </head>
 
 <body style="background-color: #d5efff">
-	<div class="fluid-container" >
+	<div class="fluid-container">
 		<div class="row" style="background-color: #7391C8; height: 8rem">
 			<div class="col-2">
 				<button id="main" class="openbtn" onclick="openNav()"
@@ -186,37 +37,31 @@ $(document).ready(function(){
 					DASHBOARD</h1>
 			</div>
 			<div class="col-2" align="right">
-				<button style="font-size: 50px; color: #3385ff">
-					<i class="fa fa-power-off"></i>
-				</button>
+				<button style="font-size: 50px; color: #3385ff"><a th:href="@{/login}" style="text-decoration:none;font-weight: 900;font-size: 1.5rem"><i class="fa fa-power-off" style="font-size: 5rem"></i></a></button>
 			</div>
-
-
 		</div>
 		<div class="row">
 			<div id="mySidebar" class="sidebar" align="center">
-				<a  href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-				<a class="tablinks" onclick="openCity(event, 'London')"id="defaultOpen" href="#">Product Type</a>
-				<a class="tablinks" onclick="openCity(event, 'Paris')"id="defaultOpen1" href="#">GST Amount</a>
-				<a class="tablinks" onclick="openCity(event, 'Tokyo')"id="defaultOpen2" href="#">Services 2</a>
+				<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+				<a class="tablinks" onclick="openCity(event, 'London')"
+					id="defaultOpen" href="#">Product Type</a> <a class="tablinks"
+					onclick="openCity(event, 'Paris')" id="defaultOpen1" href="#">GST
+					Amount</a> <a class="tablinks" onclick="openCity(event, 'Tokyo')"
+					id="defaultOpen2" href="#">Services 2</a>
 				<!-- <button class="tablinks" onclick="openCity(event, 'London')"id="defaultOpen">Product Types</button>
-				<button class="tablinks" onclick="openCity(event, 'Paris')"id="defaultOpen1">Paris</button>
-				<button class="tablinks" onclick="openCity(event, 'Tokyo')"id="defaultOpen2">Tokyo</button> -->
+				<button class="tablinks" onclick="openCity(event, 'Paris')"id="defaultOpen1">Paris</button> -->
 			</div>
-			
-			<div class="body" id="body" style="font-size: 18px; margin: 20px 20px 20px 20px">
+			<div class="body" id="body"
+				style="font-size: 18px; margin: 20px 20px 20px 20px">
 
-				<div id="London" class="tabcontent" style=" background-color: #f4f2f1;margin-left: 12px; margin-right:12px;"></div>
-				<div id="Paris" class="tabcontent"style=" background-color: #f4f2f1;margin-left: 12px; margin-right: 12px;"></div>
-				<div id="Tokyo" class="tabcontent"style=" background-color: #f4f2f1;margin-left: 12px; margin-right: 12px; "></div>
-
+				<div id="London" class="tabcontent"
+					style="background-color: #f4f2f1; margin-left: 12px; margin-right: 12px;"></div>
+				<div id="Paris" class="tabcontent"
+					style="background-color: #f4f2f1; margin-left: 12px; margin-right: 12px;"></div>
+				<div id="Tokyo" class="tabcontent"
+					style="background-color: #f4f2f1; margin-left: 12px; margin-right: 12px;"></div>
 			</div>
-
-
-
-
 		</div>
-
 	</div>
 </body>
 </html>
