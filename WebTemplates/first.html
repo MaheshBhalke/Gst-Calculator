@@ -4,66 +4,53 @@
 <head>
 <meta charset="UTF-8">
 <title>First Page</title>
-
-<link href="../static/css/dh_main.css" th:href="@{/css/dh_main.css}"
-	rel="stylesheet" media="screen" />
-<script type="text/javascript" th:src="@{/scripts/dh_main.js}"></script>
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link href="dh_main.css" rel="stylesheet" media="screen" />
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-<link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-	crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+			integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+			crossorigin="anonymous">
 </head>
-
-<body style="background-color: #d5efff">
+<body id="bodyDiv">
 	<div class="fluid-container">
-		<div class="row" style="background-color: #7391C8; height: 8rem">
+		<div class="row" id="header">
 			<div class="col-2">
-				<button id="main" class="openbtn" onclick="openNav()"
-					style="background-color: #3385ff">☰ Menu</button>
+				<button id="bt-menu" class="openbtn" onclick="openMenu()">☰ Menu</button>
 			</div>
 			<div class="col-8">
-				<h1
-					style="font-weight: 900; padding: 18px 18px 18px 18px; font-size: 4rem">BH
-					DASHBOARD</h1>
+				<h1 id="header-title">BH DASHBOARD</h1>
 			</div>
 			<div class="col-2" align="right">
-				<button style="font-size: 50px; color: #3385ff"><a th:href="@{/login}" style="text-decoration:none;font-weight: 900;font-size: 1.5rem"><i class="fa fa-power-off" style="font-size: 5rem"></i></a></button>
+				<button  id="bt-logout" style="">
+					<i class="fa fa-power-off" id="i"></i>
+				</button>
 			</div>
 		</div>
-		<div class="row">
-			<div id="mySidebar" class="sidebar" align="center">
-				<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-				<a class="tablinks" onclick="openCity(event, 'London')"
-					id="defaultOpen" href="#">Product Type</a> <a class="tablinks"
+		
+		
+		<div class="row" >
+			<div id="menuSidebar" class="sidebar" align="center">
+				<a href="javascript:void(0)" class="closebtn" onclick="closeMenu()">×</a>
+				<a class="tablinks" onclick="openLink1(event, 'tab-content1')"
+					id="defaultOpen" href="#">Product Type</a> 
+				<a class="tablinks"
 					onclick="openCity(event, 'Paris')" id="defaultOpen1" href="#">GST
-					Amount</a> <a class="tablinks" onclick="openCity(event, 'Tokyo')"
-					id="defaultOpen2" href="#">Services 2</a>
-				<!-- <button class="tablinks" onclick="openCity(event, 'London')"id="defaultOpen">Product Types</button>
-				<button class="tablinks" onclick="openCity(event, 'Paris')"id="defaultOpen1">Paris</button> -->
+					Amount</a>	
 			</div>
-			<div class="body" id="body"
-				style="font-size: 18px; margin: 20px 20px 20px 20px">
-
-				<div id="London" class="tabcontent"
-					style="background-color: #f4f2f1; margin-left: 12px; margin-right: 12px;"></div>
-				<div id="Paris" class="tabcontent"
-					style="background-color: #f4f2f1; margin-left: 12px; margin-right: 12px;"></div>
-				<div id="Tokyo" class="tabcontent"
-					style="background-color: #f4f2f1; margin-left: 12px; margin-right: 12px;"></div>
+			<div class="main" id="maindiv">
+				<div id="tab-content1" class="tabcontent"></div>
+				<div id="Paris" class="tabcontent"></div>
 			</div>
 		</div>
 	</div>
 </body>
+<script type="text/javascript" src="dh_main.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </html>
 
 

@@ -1,5 +1,5 @@
 @charset "UTF-8";
-body {
+.main {
 	font-family: "Lato", sans-serif;
 }
 
@@ -53,12 +53,13 @@ a:active {
 	background-color: #444;
 }
 
-#main {
+#bt-menu {
 	transition: margin-left .5s;
 	padding: 25px;
+	background-color: #3385ff
 }
 
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+
 @media screen and (max-height: 450px) {
 	.sidebar {
 		padding-top: 15px;
@@ -66,4 +67,34 @@ a:active {
 	.sidebar a {
 		font-size: 18px;
 	}
+}
+
+#header-title {
+	font-weight: 900;
+	 padding: 18px 18px 18px 18px;
+	  font-size: 2.8rem;
+}
+#bodyDiv {
+	background-color: #d5efff;
+}
+#header{
+	background-color: #7391C8;
+	height: 5rem;
+}
+#bt-logout={
+	font-size: 50px;
+	color: #3385ff;
+}
+
+#i{
+	font-size:4.6rem;
+}
+#maindiv{
+	font-size: 18px;
+	margin: 20px 20px 20px 20px;
+}
+.tabcontent{
+	background-color: #f4f2f1;
+	margin-left: 12px;
+	margin-right: 12px;
 }

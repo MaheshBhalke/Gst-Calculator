@@ -1,37 +1,27 @@
-function openNav() {
-		document.getElementById("mySidebar").style.width = "250px";
-		document.getElementById("main").style.marginLeft = "0px";
-		document.getElementById("mySidebar").style.marginTop = "80px";
-		document.getElementById("body").style.marginLeft = "270px";
+	function openMenu() {
+		document.getElementById("menuSidebar").style.width = "250px";
+		document.getElementById("bt-menu").style.marginLeft = "0px";
+		document.getElementById("menuSidebar").style.marginTop = "80px";
+		document.getElementById("maindiv").style.marginLeft = "270px";
 	}
 
-	function closeNav() {
-		document.getElementById("mySidebar").style.width = "0";
-		document.getElementById("main").style.marginLeft = "0";
-		document.getElementById("body").style.marginLeft = "30px";
+	function closeMenu() {
+		document.getElementById("menuSidebar").style.width = "0";
+		document.getElementById("bt-menu").style.marginLeft = "0";
+		document.getElementById("maindiv").style.marginLeft = "30px";
 	}
 	
 	$(document).ready(function() {
 		$("#defaultOpen").click(function() {
-			$.ajax({
-				url : "http://localhost:8080/api/typeadded",
-				success : function(data) {
-					$("#London").empty().append(JSON.stringify(data))
-				}
-			});
+			
 		});
 
 		$("#defaultOpen1").click(function() {
-			$.ajax({
-				url : "http://localhost:8080/api/gst/3/12000",
-				success : function(data) {
-					$("#Paris").empty().append(JSON.stringify(data))
-				}
-			});
+			
 		});
 	});
 	
-	function openCity(evt, cityName) {
+	function openLink1(evt, cityName) {
 		var i, tabcontent, tablinks;
 		tabcontent = document.getElementsByClassName("tabcontent");
 		for (i = 0; i < tabcontent.length; i++) {
