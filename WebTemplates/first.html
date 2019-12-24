@@ -11,9 +11,10 @@
 			integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
 			crossorigin="anonymous">
 </head>
-<body id="bodyDiv">
+
+<body id="htmlbody">
 	<div class="fluid-container">
-		<div class="row" id="header">
+		<div class="row" id="dashboard-section">
 			<div class="col-2">
 				<button id="bt-menu" class="openbtn" onclick="openMenu()">☰ Menu</button>
 			</div>
@@ -21,25 +22,21 @@
 				<h1 id="header-title">BH DASHBOARD</h1>
 			</div>
 			<div class="col-2" align="right">
-				<button  id="bt-logout" style="">
+				<button  id="bt-logout">
 					<i class="fa fa-power-off" id="i"></i>
 				</button>
 			</div>
 		</div>
-		
-		
 		<div class="row" >
 			<div id="menuSidebar" class="sidebar" align="center">
 				<a href="javascript:void(0)" class="closebtn" onclick="closeMenu()">×</a>
-				<a class="tablinks" onclick="openLink1(event, 'tab-content1')"
-					id="defaultOpen" href="#">Product Type</a> 
-				<a class="tablinks"
-					onclick="openCity(event, 'Paris')" id="defaultOpen1" href="#">GST
-					Amount</a>	
+			<!--	<a class="tablinks" onclick="openTab(event, 'tab-content1')" id="tab-1" href="#">Product Type</a>  -->
+				<button class="btn btn-link" id="tab-1">Product Type</button> <br>
+				<button class="btn btn-link" id="tab-2">GST Amount</button> 
 			</div>
-			<div class="main" id="maindiv">
-				<div id="tab-content1" class="tabcontent"></div>
-				<div id="Paris" class="tabcontent"></div>
+			<div class="data-container" id="containder">
+				<p id = "tab-content" style = " font-size: 20px; font-weight: bold;"> </p> 
+			<!--	<div id="tab-content-1" class="tab-content"></div> -->
 			</div>
 		</div>
 	</div>
@@ -47,10 +44,6 @@
 <script type="text/javascript" src="dh_main.js"></script>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </html>
 
 

@@ -1,6 +1,45 @@
 @charset "UTF-8";
-.main {
+
+#htmlbody {
+	background-color: #d5efff;
+}
+
+.data-container {
 	font-family: "Lato", sans-serif;
+}
+#dashboard-section{
+	background-color: #7391C8;
+	height: 5rem;
+}
+#bt-menu {
+	transition: margin-left .5s;
+	padding: 25px;
+	background-color: #3385ff
+}
+#header-title {
+	font-weight: 900;
+	 padding: 18px 18px 18px 18px;
+	  font-size: 2.8rem;
+}
+#bt-logout={
+	font-size: 50px;
+	color: #3385ff;
+}
+#i{
+	font-size:4.6rem;
+}
+#tab-1, #tab-2{
+	color : black;
+	text-decoration : none;
+	font-size : 1.5rem;
+	font-weight : 900;
+}
+#tab-1:focus {
+  background-color: #4CAF50;
+}
+#tab-2:focus {
+  background-color: #4CAF50;
+
 }
 
 .sidebar {
@@ -52,47 +91,16 @@ a:active {
 .openbtn:hover {
 	background-color: #444;
 }
-
-#bt-menu {
-	transition: margin-left .5s;
-	padding: 25px;
-	background-color: #3385ff
-}
-
-
 @media screen and (max-height: 450px) {
 	.sidebar {
 		padding-top: 15px;
 	}
-	.sidebar a {
-		font-size: 18px;
-	}
 }
-
-#header-title {
-	font-weight: 900;
-	 padding: 18px 18px 18px 18px;
-	  font-size: 2.8rem;
-}
-#bodyDiv {
-	background-color: #d5efff;
-}
-#header{
-	background-color: #7391C8;
-	height: 5rem;
-}
-#bt-logout={
-	font-size: 50px;
-	color: #3385ff;
-}
-
-#i{
-	font-size:4.6rem;
-}
-#maindiv{
+#containder{
 	font-size: 18px;
 	margin: 20px 20px 20px 20px;
 }
+
 .tabcontent{
 	background-color: #f4f2f1;
 	margin-left: 12px;
